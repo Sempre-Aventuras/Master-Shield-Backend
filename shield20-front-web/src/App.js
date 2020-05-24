@@ -5,15 +5,22 @@ import {
   Route
 } from "react-router-dom";
 
+// CSS
+import './assets/css/bootstrap.min.css';
+import './assets/css/paper-kit.css';
 
-import './App.css';
+// Pages
 import WellcomeScreen from './screens/WellcomeScreen';
 import HomeScreen from './screens/HomeScreen';
+
+// Character Pages
+import NewCharacterScreen from './screens/Character/NewCharacterScreen';
+import MyCharacterScreen from './screens/Character/MyCharacterScreen';
 
 
 function App() {
   return (
-    <div className="App">
+    <>
       <WellcomeScreen />
 
       <Router>
@@ -21,10 +28,17 @@ function App() {
           <Route exact path="/home">
               <HomeScreen />
           </Route>
+
+          <Route exact path="/character/new">
+              <NewCharacterScreen />
+          </Route>
+          <Route exact path="/character/my">
+              <MyCharacterScreen />
+          </Route>          
         </Switch>
       </Router>
 
-    </div>
+    </>
   );
 }
 

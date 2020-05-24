@@ -2,21 +2,25 @@ import React, { Component } from 'react';
 import { Player } from 'video-react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { useHistory } from 'react-router'
-
-import IntroVideo from './intro.mp4';
 import './style.css';
 import ControlBar from 'video-react/lib/components/control-bar/ControlBar';
 
+// Video
+import IntroVideo from './intro.mp4';
+// Components
+import WellcomeNavbar from '../../components/navbars/WellcomeNavbar';
+
+
 const LoginFormContainer = styled.div`
+  position: absolute;
+  top: 15vh;
+  left: 30vw;
   z-index: 1;
   height: 80vh;
   width: 40vw;
   background: white;
-  position: absolute;
-  top: 15vh;
-  left: 30vw;
   border-radius: 5%;
+  text-align: center;
 `
 
 export default class LoginScreen extends Component {
@@ -50,6 +54,9 @@ export default class LoginScreen extends Component {
 
     return (
         <>
+
+          <WellcomeNavbar />
+
             <div className="divVideoPlayer">
               <Player
                 autoPlay="true"

@@ -1,13 +1,8 @@
-body
-{
-    overflow: hidden;
-}
-
 .divVideoPlayer .videoPlayer
 {
     margin: 0 !important;
     padding: 0 !important;
-    position: absolute;
+    position: fixed !important;
     top: -10vh;
     left: 0;
     z-index: -1;

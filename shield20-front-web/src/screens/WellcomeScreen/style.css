@@ -1,0 +1,14 @@
+.divVideoPlayer .videoPlayer .video-react-video
+{
+    margin: 0 !important;
+    padding: 0 !important;
+    position: fixed !important;
+    top: -10vh;
+    left: 0;
+    z-index: -1;
+}
+
+video
+{
+    width: auto;
+}
