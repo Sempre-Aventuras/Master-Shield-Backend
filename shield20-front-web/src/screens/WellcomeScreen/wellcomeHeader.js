@@ -49,24 +49,24 @@ function WellcomeHeader() {
 
       <div className="divVideoPlayer">
         <PlayerStyled
-          autoPlay="true" 
-          fluid="false"
-          heigth="100%"
+          autoPlay={true}
           loop 
+          fluid={false}
+          heigth="100%"
           src={IntroVideo}
           className="videoPlayer"
         >
           <ControlBar disabled disableDefaultControls={true}/>
         </PlayerStyled>
       </div>
-
+        
         <div className="filter" />
         <div className="content-center">
           <Container>
             <div className="motto">
               <h1 className="title">Master Shield</h1>
               <h3 className="description">
-                Start designing your landing page here.
+                Sua nova aventura o aguarda.
               </h3>
               <br />
               <Button

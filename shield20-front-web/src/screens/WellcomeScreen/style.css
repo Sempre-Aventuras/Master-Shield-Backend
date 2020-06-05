@@ -12,3 +12,7 @@ video
 {
     width: auto;
 }
+
+.bg-navbar{
+    background-color: #303237;
+}

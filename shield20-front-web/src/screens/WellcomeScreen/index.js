@@ -15,7 +15,7 @@ import {
     CardTitle,
     Form,
     Input,
-    Container,
+    Container, 
     Row,
     Col
   } from "reactstrap";
@@ -26,9 +26,9 @@ import Login from '../LoginScreen';
 
 // Components imported
 // import WellcomeNavbar from '../../components/navbars/wellcomeNavbar';
-import WellcomeNavbar from "../../components/navbars/WellcomeNavbar.js";
+import WellcomeNavbar from "../../components/navbars/WellcomeNavbar/index.js";
 import WellcomeHeader from "./wellcomeHeader.js";
-import FooterWhite from "../../components/Footers/FooterWhite.js";
+import FooterWellcome from "../../components/Footers/FooterWellcome.js";
 
 import ImgBanner from './panel.jpg';
 import './style.css';
@@ -41,6 +41,11 @@ const ImgContainer = styled.img`
     position: absolute;
     top: 20%;
     left: 10%;
+`
+
+const FeatureSection = styled.div`
+    background-color: #1c1e21;
+    color: white;
 `
 
 const Wellcome = () => {
@@ -59,12 +64,12 @@ const Wellcome = () => {
             <WellcomeNavbar />
             <WellcomeHeader />
 
-            <div className="wrapper">
-                <div className="section text-center landing-section">
+            <FeatureSection className="wrapper">
+                <div className="text-center landing-section">
                 <Container>
                     <Row>
                     <Col className="ml-auto mr-auto" md="8">
-                        <h2 className="title">Descubra os poderes de Master Shield</h2>
+                        <h2 className="mb-4 ">Descubra os poderes de Master Shield</h2>
                         <h5>
                         Crie fichas de personagem com poucos cliques, salve, compartilhe,
                         e baixe em PDF. Tudo organizado em um só lugar para que nunca mais
@@ -72,14 +77,14 @@ const Wellcome = () => {
                         E ainda mais ferramentas virão.
                         </h5>
                         <br />
-                        <Button
+                        {/* <Button
                         className="btn-fill btn-round"
                         color="danger"
                         href="#pablo"
                         onClick={e => e.preventDefault()}
                         >
                         See Details
-                        </Button>
+                        </Button> */}
                     </Col>
                     </Row>
                     <br />
@@ -87,96 +92,96 @@ const Wellcome = () => {
                     <Row>
                     <Col md="3">
                         <div className="info">
-                        <div className="icon icon-danger">
+                        <div className="icon">
                             <i className="nc-icon nc-palette" />
                         </div>
                         <div className="description">
-                            <h4 className="info-title">Beautiful Gallery</h4>
+                            <h4 className="">Criador de Personagens</h4>
                             <p className="description">
-                            Spend your time generating new ideas. You don't have to
-                            think of implementing.
+                            Gaste menos tempo criando seus personagens, basta clicar e selecionar 
+                            e em instantes termine as fichas.
                             </p>
-                            <Button
+                            {/* <Button
                             className="btn-link"
                             color="danger"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                             >
                             See more
-                            </Button>
+                            </Button> */}
                         </div>
                         </div>
                     </Col>
                     <Col md="3">
                         <div className="info">
-                        <div className="icon icon-danger">
+                        <div className="icon">
                             <i className="nc-icon nc-bulb-63" />
                         </div>
                         <div className="description">
-                            <h4 className="info-title">New Ideas</h4>
+                            <h4 className="">New Ideas</h4>
                             <p>
                             Larger, yet dramatically thinner. More powerful, but
                             remarkably power efficient.
                             </p>
-                            <Button
+                            {/* <Button
                             className="btn-link"
                             color="danger"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                             >
                             See more
-                            </Button>
+                            </Button> */}
                         </div>
                         </div>
                     </Col>
                     <Col md="3">
                         <div className="info">
-                        <div className="icon icon-danger">
+                        <div className="icon">
                             <i className="nc-icon nc-chart-bar-32" />
                         </div>
                         <div className="description">
-                            <h4 className="info-title">Statistics</h4>
+                            <h4 className="">Statistics</h4>
                             <p>
                             Choose from a veriety of many colors resembling sugar
                             paper pastels.
                             </p>
-                            <Button
+                            {/* <Button
                             className="btn-link"
                             color="danger"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                             >
                             See more
-                            </Button>
+                            </Button> */}
                         </div>
                         </div>
                     </Col>
                     <Col md="3">
                         <div className="info">
-                        <div className="icon icon-danger">
+                        <div className="icon">
                             <i className="nc-icon nc-sun-fog-29" />
                         </div>
                         <div className="description">
-                            <h4 className="info-title">Delightful design</h4>
+                            <h4 className="">Delightful design</h4>
                             <p>
                             Find unique and handmade delightful designs related items
                             directly from our sellers.
                             </p>
-                            <Button
+                            {/* <Button
                             className="btn-link"
                             color="danger"
                             href="#pablo"
                             onClick={e => e.preventDefault()}
                             >
                             See more
-                            </Button>
+                            </Button> */}
                         </div>
                         </div>
                     </Col>
                     </Row>
                 </Container>
                 </div>
-            </div>
+            </FeatureSection>
 
 
             <div className="wrapper">
@@ -201,7 +206,7 @@ const Wellcome = () => {
                 </div>
             </div>
 
-            <FooterWhite />
+            <FooterWellcome />
         </> 
     )
 }

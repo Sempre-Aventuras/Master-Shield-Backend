@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // Components
 // Imported
-import MainNavbar from '../../com../../components/navbars/MainNavbar';
+import MainNavbar from '../../components/navbars/MainNavbar';
 
 // Styled
 const HomeContainer = styled.div`

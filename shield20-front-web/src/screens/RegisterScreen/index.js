@@ -17,8 +17,20 @@ import './style.css';
 // Video
 import IntroVideo from './video.mp4';
 // Components
-import WellcomeNavbar from '../../components/navbars/WellcomeNavbar';
+// Imported Components
+import WellcomeNavbar from '../../components/navbars/WellcomeNavbar/index.js';
 
+// Core Components
+const RegisterContainer = styled(Container)`
+ margin-top: 6rem;
+`
+const StyledRegisterCard = styled(Card)`
+  background-color: #1c1e21;
+`
+
+const StyledCardTitle = styled(CardTitle)`
+  color: white !important;
+`
 
 const DivText = styled.div`
   color: black;
@@ -40,7 +52,7 @@ export default class RegisterScreen extends Component {
 
           <WellcomeNavbar />
 
-          <Container>
+          <RegisterContainer>
             <div className="divVideoPlayer">
               <Player
                 autoPlay="true"
@@ -52,7 +64,7 @@ export default class RegisterScreen extends Component {
               </Player>
             </div>
 
-            <Row className="mt-4">
+            <Row style={{ margin: "0 auto"}}>
               <Col className="ml-auto" lg="6" md="6" sm="7" xs="12">
                 <div className="info info-horizontal pt-1 pb-2">
                   <DivText className="description">
@@ -85,10 +97,10 @@ export default class RegisterScreen extends Component {
                 </div>
               </Col>
               <Col className="mr-auto" lg="6" md="6" sm="5" xs="12">
-                <Card className="card-register mt-5" style={{ textAlign:"center"}}>
-                  <CardTitle className="text-center" tag="h3">
+                <StyledRegisterCard className="card-register mt-5" style={{ textAlign:"center"}}>
+                  <StyledCardTitle className="text-center" tag="h3">
                     Registrar
-                  </CardTitle>
+                  </StyledCardTitle>
                   
                   <Form className="register-form mt-4">
                     <Input className="my-1" name="name" placeholder="Nome" type="text" />
@@ -111,10 +123,10 @@ export default class RegisterScreen extends Component {
                       .
                     </p>
                   </div>
-                </Card>
+                </StyledRegisterCard>
               </Col>
             </Row>
-          </Container>
+          </RegisterContainer>
         </>
     );
   }

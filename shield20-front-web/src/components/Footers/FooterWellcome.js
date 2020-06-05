@@ -6,14 +6,14 @@ import { Container, Row } from "reactstrap";
 
 // core components
 
-function FooterBlack() {
+function FooterWellcome() {
   return (
     <>
       <footer className="footer footer-white">
         <Container>
           <Row>
             <nav className="footer-nav">
-              <ul>
+              {/* <ul>
                 <li>
                   <a
                     href="https://www.creative-tim.com?ref=pkpr-white-footer"
@@ -40,13 +40,13 @@ function FooterBlack() {
                     Licenses
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </nav>
             <div className="credits ml-auto">
-              <span className="copyright">
+              {/* <span className="copyright">
                 © {new Date().getFullYear()}
                 , made with <i className="fa fa-heart heart" /> by Creative Tim
-              </span>
+              </span> */}
             </div>
           </Row>
         </Container>
@@ -55,4 +55,4 @@ function FooterBlack() {
   );
 }
 
-export default FooterBlack;
+export default FooterWellcome;

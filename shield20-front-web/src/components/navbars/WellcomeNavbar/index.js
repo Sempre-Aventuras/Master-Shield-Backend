@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 // nodejs library that concatenates strings
 import classnames from "classnames";
 // JavaScript plugin that hides or shows a component based on your scroll
@@ -15,7 +16,23 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
+import './style.css';
+import Logo from '../../../assets/img/msLogo.png';
+
 // core components
+const StyledImg = styled.img`
+  max-width: 7vw;
+`
+
+const StyledButtons = styled(Button)`
+  background-color: #303237;
+  border-color: #303237;
+
+  a {
+    color: white;
+  }
+  
+`
 
 function WellcomeNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -31,7 +48,7 @@ function WellcomeNavbar() {
         document.documentElement.scrollTop > 499 ||
         document.body.scrollTop > 499
       ) {
-        setNavbarColor("bg-info");
+        setNavbarColor("bg-navbar");
       } else if (
         document.documentElement.scrollTop < 500 ||
         document.body.scrollTop < 500
@@ -63,8 +80,8 @@ function WellcomeNavbar() {
       >
         <Container>
           <div className="navbar-translate">
-            <NavbarBrand id="navbar-brand" to="/index" tag={Link}>
-              Master Shield
+            <NavbarBrand id="navbar-brand" to="/" tag={Link}>
+              <StyledImg src={Logo} />
             </NavbarBrand>
             <UncontrolledTooltip placement="bottom" target="navbar-brand">
               Master Shield
@@ -84,14 +101,19 @@ function WellcomeNavbar() {
               <span className="navbar-toggler-bar bar3"></span>
             </button>
           </div>
-          <Collapse navbar isOpen={collapseOpen}>
+          <Collapse className="styleMobileNavbar" navbar isOpen={collapseOpen}>
             <Nav className="ml-auto" navbar>
-              <Button>
-                <Link to="/login">Login</Link>
-              </Button>
-              <Button>
-                <Link to="/register">Registrar</Link>
-              </Button>              
+              <Link to="/login">
+                <StyledButtons>
+                Login
+                </StyledButtons>
+              </Link>
+              <Link to="/register">
+                <StyledButtons>
+                Registrar
+                </StyledButtons>              
+              </Link>
+              
             </Nav>
           </Collapse>
         </Container>

@@ -37,19 +37,84 @@ const RowStyled = styled(Row)`
 `;
 
 const ColStyled = styled(Col)`
+    display: block;
     justify-content: center;
     align-content: center;
     text-align: center;
+    margin: auto auto;
+`
+
+const H4Aligned = styled.h4`
+    margin: auto auto;
 `
 
 export default class NewCharacterScreen extends Component {
     constructor(props){
         super(props);
 
+        this.state={
+            constitution: 0,
+            strength: 0,
+            dextery: 0,
+            agility: 0,
+            intelligence: 0,
+            will: 0,
+            perception: 0,
+            charisma: 0,
+            constitutionPerc: 0,
+            strengthPerc: 0,
+            dexteryPerc: 0,
+            agilityPerc: 0,
+            intelligencePerc: 0,
+            willPerc: 0,
+            perceptionPerc: 0,
+            charismaPerc: 0,            
+        }
+
+        this.strengthHandleChanger = this.strengthHandleChanger.bind(this);
     }
 
+    constitutionHandleChanger = async (e) => {
+        await this.setState({constitution: e.target.value});
+        this.setState({constitutionPerc: (this.state.constitution * 10)})
+    };
 
-      submitHandler(){};
+    strengthHandleChanger = async (e) => {
+        await this.setState({strength: e.target.value});
+        this.setState({strengthPerc: (this.state.strength * 10)})
+    };
+
+    dexteryHandleChanger = async (e) => {
+        await this.setState({dextery: e.target.value});
+        this.setState({dexteryPerc: (this.state.dextery * 10)})
+    };
+    
+    agilityHandleChanger = async (e) => {
+        await this.setState({agility: e.target.value});
+        this.setState({agilityPerc: (this.state.agility * 10)})
+    };
+    
+    intelligenceHandleChanger = async (e) => {
+        await this.setState({intelligence: e.target.value});
+        this.setState({intelligencePerc: (this.state.intelligence * 10)})
+    };
+    
+    willHandleChanger = async (e) => {
+        await this.setState({will: e.target.value});
+        this.setState({willPerc: (this.state.will * 10)})
+    };
+    
+    perceptionHandleChanger = async (e) => {
+        await this.setState({perception: e.target.value});
+        this.setState({perceptionPerc: (this.state.perception * 10)})
+    };
+    
+    charismaHandleChanger = async (e) => {
+        await this.setState({charisma: e.target.value});
+        this.setState({charismaPerc: (this.state.charisma * 10)})
+    };    
+
+
 
       render(){
         return (
@@ -116,7 +181,8 @@ export default class NewCharacterScreen extends Component {
                                 type="text"
                                 />
                             </FormGroup>
-                            <FormGroup>
+
+                            {/* <FormGroup>
                                 <h6>
                                 Tagline <span className="icon-danger">*</span>
                                 </h6>
@@ -186,31 +252,73 @@ export default class NewCharacterScreen extends Component {
                                 Display on landing page{" "}
                                 <span className="form-check-sign" />
                                 </Label>
-                            </FormGroup>
+                            </FormGroup> */}
                             </Col>
                         </Row>
 
                             {/* Atributos */}
 
-                        <Row>
-                            <div style={{ textAlign: "center"}}><h3>Atributos</h3></div>
+                        <Row className="my-4 border">
+                            <div style={{ textAlign: "center", margin: "auto auto"}}><h2>Atributos</h2></div>
                             <RowStyled className="mt-2" md="4">
                                 <ColStyled><h4></h4></ColStyled>
                                 <ColStyled><h4>Valor Original</h4></ColStyled>
                                 <ColStyled><h4>Valor Modificado</h4></ColStyled>
                                 <ColStyled><h4>Teste Normal</h4></ColStyled>
                             </RowStyled>
-                            <RowStyled className="mt-2" md="4">
-                                <ColStyled><h4>Força</h4></ColStyled>
-                                <ColStyled><h4>Valor Original</h4></ColStyled>
-                                <ColStyled><h4>Valor Modificado</h4></ColStyled>
-                                <ColStyled><h4>Teste Normal</h4></ColStyled>
-                            </RowStyled>                            
+                            <RowStyled className="mt-4" md="4">
+                                <ColStyled><H4Aligned>Constituição</H4Aligned></ColStyled>
+                                <ColStyled><Input placeholder={this.state.constitution} min={0} max={100} type="number" step="1" onChange={this.constitutionHandleChanger}/></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" step="1" disabled/></ColStyled>
+                                <ColStyled><Input  placeholder={this.state.constitutionPerc} min={0} type="number" disabled/></ColStyled>
+                            </RowStyled>         
+                            <RowStyled className="mt-4" md="4">
+                                <ColStyled><H4Aligned>Força</H4Aligned></ColStyled>
+                                <ColStyled><Input placeholder="0" min={0} max={100} type="number" step="1" onChange={this.strengthHandleChanger}/></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" step="1"  disabled/></ColStyled>
+                                <ColStyled><Input placeholder={this.state.strengthPerc} min={0} type="number" disabled/></ColStyled>
+                            </RowStyled>   
+                            <RowStyled className="mt-4" md="4">
+                                <ColStyled><H4Aligned>Dextreza</H4Aligned></ColStyled>
+                                <ColStyled><Input placeholder="0" min={0} max={100} type="number" step="1" /></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" step="1"  disabled/></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" disabled/></ColStyled>
+                            </RowStyled>   
+                            <RowStyled className="mt-4" md="4">
+                                <ColStyled><H4Aligned>Agilidade</H4Aligned></ColStyled>
+                                <ColStyled><Input placeholder="0" min={0} max={100} type="number" step="1" /></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" step="1"  disabled/></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" disabled/></ColStyled>
+                            </RowStyled>   
+                            <RowStyled className="mt-4" md="4">
+                                <ColStyled><H4Aligned>Inteligência</H4Aligned></ColStyled>
+                                <ColStyled><Input placeholder="0" min={0} max={100} type="number" step="1" /></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" step="1" disabled /></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" disabled/></ColStyled>
+                            </RowStyled>   
+                            <RowStyled className="mt-4" md="4">
+                                <ColStyled><H4Aligned>Força de Vontade</H4Aligned></ColStyled>
+                                <ColStyled><Input placeholder="0" min={0} max={100} type="number" step="1" /></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" step="1"  disabled/></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" disabled/></ColStyled>
+                            </RowStyled>          
+                            <RowStyled className="mt-4" md="4">
+                                <ColStyled><H4Aligned>Percepção</H4Aligned></ColStyled>
+                                <ColStyled><Input placeholder="0" min={0} max={100} type="number" step="1" /></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" step="1"  disabled/></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" disabled/></ColStyled>
+                            </RowStyled>   
+                            <RowStyled className="my-4" md="4">
+                                <ColStyled><H4Aligned>Carisma</H4Aligned></ColStyled>
+                                <ColStyled><Input placeholder="0" min={0} max={100} type="number" step="1" /></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" step="1"  disabled/></ColStyled>
+                                <ColStyled><Input  min={0} max={100} type="number" disabled/></ColStyled>
+                            </RowStyled>                                                                                                                                                                                                                   
 
                         </Row>
 
                             {/* Botões */}
-                        <Row className="buttons-row mt-5">
+                        <Row className="buttons-row my-5">
                             <Col md="4" sm="4">
                             <Button
                                 block
