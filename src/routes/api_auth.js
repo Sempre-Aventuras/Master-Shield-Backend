@@ -138,7 +138,7 @@ uploadImage = async (files, doc) => {
     var fileExtention = files.avatars.name.split(".").pop();
     doc.avatars = `${Date.now()}+${doc.username}.${fileExtention}`;
     var newpath =
-      path.resolve(__dirname + "/uploaded/images/") + "/" + doc.avatars;
+      path.resolve(__dirname + "../../../uploaded/images/") + "/" + doc.avatars;
 
     if (fs.exists(newpath)) {
       await fs.remove(newpath);

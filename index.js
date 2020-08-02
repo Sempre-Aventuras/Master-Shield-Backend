@@ -10,6 +10,7 @@ require("dotenv").config({ path:  __dirname + "/.env" });
 
 // First Config App
 app.use(express.static(__dirname + "/uploaded"));
+console.log(__dirname + "/uploaded")
 
 // Require DB
 require("./src/utils/db.js");
